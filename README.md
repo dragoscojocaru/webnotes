@@ -18,3 +18,10 @@ start server:
 
 FRONTEND http://localhost:3001/
     cd /var/www/app/client && npm start (din container)
+
+
+GIT
+
+git add .
+git commit -m "mesaj commit"
+git push origin branch_name
