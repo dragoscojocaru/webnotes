@@ -25,3 +25,7 @@ GIT
 git add .
 git commit -m "mesaj commit"
 git push origin branch_name
+
+
+git merge origin main
+git checkout branch_pe_care_ma_mut
