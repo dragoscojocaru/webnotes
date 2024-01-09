@@ -2,8 +2,13 @@ FROM node:18-alpine
 
 WORKDIR /var/www/app
 
+ENV NODE_ENV=development
+
+
 COPY . /var/www/app/
 
-RUN npm install
+#npm install for backend
+RUN cd /var/www/app/server && npm install 
 
-CMD ["node","./bin/www"]
+#npm install for frontend
+RUN cd /var/www/app/client && npm install

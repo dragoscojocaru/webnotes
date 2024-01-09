@@ -9,11 +9,14 @@ services:
     container_name: webnotes-node
     ports:
       - "3000:3000"
+      - "3001:3001"
     volumes:
       - ./:/var/www/app
     restart: unless-stopped
     depends_on:
       - webnotes-mysql
+    command: sh -c "cd /var/www/app/server && npm start && cd /var/www/client && npm start"
+
   webnotes-mysql:
     image: mysql:8
     container_name: webnotes-mysql
@@ -25,6 +28,7 @@ services:
       MYSQL_ROOT_PASSWORD: secret
     command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     restart: unless-stopped
+
   webnotes-mailcatcher:
     image: schickling/mailcatcher
     container_name: webnotes-mailcatcher
