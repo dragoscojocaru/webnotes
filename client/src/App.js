@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import EditorComponent from "./EditorComponents/FroalaBasicEditorComponent";
+import Navbar from "./NavbarComponents/NavbarComponent.jsx";
+import Home from "./Pages/Home";
+import AddNote from "./Pages/AddNote";
+import NotesList from "./Pages/NotesList";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
+  // let component;
+  // switch (window.location.pathname) {
+  //   case "/":
+  //     component = <Home />;
+  //     break;
+  //   case "/AddNote":
+  //     component = <AddNote />;
+  //     break;
+  //   case "/NotesList":
+  //     component = <NotesList />;
+  //     break;
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <div className="container">
+        {/* {component} */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AddNote" element={<AddNote />} />
+          <Route path="/NotesList" element={<NotesList />} />
+        </Routes>
+      </div>
     </div>
   );
 }
