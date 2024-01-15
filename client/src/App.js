@@ -19,6 +19,22 @@ function App() {
         </a>
       </header>
     </div>
+   <Routes>
+    <Route path="/" element={<Layout/>}>
+      {/*rutele publice */}
+      <Route path="/" element={<Register/>}/>
+      <Route path="login" element={<Login/>}/>
+      <Route path="linkpage" element={<LinkPage/>}/>
+     
+
+      {/*rutele care sunt protejate(Home/AddNote/NotesList) */} 
+     
+      {/*<Route path="home" element={<Home/>} /> */ }
+   
+
+    </Route>
+   </Routes>
+   
   );
   return <Router />;
 }
