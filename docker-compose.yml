@@ -15,7 +15,6 @@ services:
     restart: unless-stopped
     depends_on:
       - webnotes-mysql
-    command: sh -c "cd /var/www/app/server && npm start && cd /var/www/client && npm start"
 
   webnotes-mysql:
     image: mysql:8
