@@ -13,8 +13,8 @@ const sequelize = new Sequelize(
  const models = [
     // Add here all of your models
     require('../models/user'),
+    require('../models/discipline'),    
     require('../models/note'),  
-    require('../models/discipline'),     
    ].map(m=>m(sequelize));
 
 
