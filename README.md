@@ -1,6 +1,5 @@
 # webnotes
 
-
 Proiectul de backend este in ./server
 Proiectul de frontend este in ./client
 
@@ -12,20 +11,15 @@ docker exec -it webnotes-node sh (conectare in containerul de node care contine 
 
 BACKEND http://localhost:3000/
 
-start server: 
-    cd /var/www/app/server && npm start (din container)
-
+start server:
+cd /var/www/app/server && npm start (din container)
 
 FRONTEND http://localhost:3001/
-    cd /var/www/app/client && npm start (din container)
+cd /var/www/app/client && npm start (din container)
 
-
-GIT
-
-git add .
-git commit -m "mesaj commit"
-git push origin branch_name
-
-
-git merge origin main
-git checkout branch_pe_care_ma_mut
+------------------------- CSS --------------------------------------
+Paleta de culori: NEUTRAL de pe https://tailwindcss.com/docs/customizing-colors
+--
+background-color: #e5e5e5;
+font-family: "Lato", sans-serif;
+font-weight: 400;

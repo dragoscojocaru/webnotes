@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Router from "./Components/Router/Router.js";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
       </header>
     </div>
   );
+  return <Router />;
 }
 
 export default App;
