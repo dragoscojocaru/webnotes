@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useContext } from 'react';
-import AuthContext from "./context/AuthProvider";
+import AuthContext from "../context/AuthProvider";
 import {Link} from 'react-router-dom';
+import "../Components/login.css"
 
 //import axios from './api/axios';
 const LOGIN_URL = '/auth';
