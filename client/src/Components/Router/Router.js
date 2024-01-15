@@ -12,7 +12,6 @@ export default function Router() {
       <div className="container">
         <Routes>
           <Route path="/Home" element={<Home />} />
-          {/* <Route path="/AddNote" element={<AddNote />} /> */}
           <Route path="/NotesList" element={<NotesList />} />
         </Routes>
       </div>

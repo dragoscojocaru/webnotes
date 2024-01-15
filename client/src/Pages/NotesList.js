@@ -7,6 +7,7 @@
 // import Header from "../Components/NotesListComponent/Header";
 
 // export default function NotesList() {
+//   // Definirea categoriilor
 //   const categories = [
 //     "Multimedia",
 //     "Web Technologies",
@@ -15,6 +16,8 @@
 //     "DAM",
 //     "DSAD",
 //   ];
+
+//   // Starea pentru note
 //   const [notes, setNotes] = useState([
 //     {
 //       id: nanoid(),
@@ -38,23 +41,24 @@
 //       category: "Category",
 //     },
 //   ]);
-//   //Filters
+
+//   // Starea pentru filtre
 //   const [showEditor, setShowEditor] = useState(false);
 //   const [darkMode, setDarkMode] = useState(false);
 //   const [selectedCategoryFilter, setSelectedCategoryFilter] = useState("");
 //   const [searchText, setSearchText] = useState("");
 //   const [searchContent, setSearchContent] = useState("");
 //   const [selectedNote, setSelectedNote] = useState(null);
-
 //   const [isEditing, setIsEditing] = useState(false);
 
-//   //modify note function
+//   // Funcția de modificare a notei
 //   const handleEditNote = (note) => {
 //     setSelectedNote(note);
 //     setShowEditor(true);
 //     setIsEditing(!!note);
 //   };
 
+//   // Efect pentru încărcarea datelor din localStorage
 //   useEffect(() => {
 //     const saveNotes = JSON.parse(localStorage.getItem("react-notes-app-data"));
 //     console.log("Fetching data from local storage");
@@ -63,26 +67,27 @@
 //     }
 //   }, []);
 
-//   //save to local storage
+//   // Efect pentru salvarea datelor în localStorage
 //   useEffect(() => {
 //     console.log("Saving data to local storage");
 //     localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
 //   }, [notes]);
 
-//   //note add function
+//   // Funcția de adăugare a notei
 //   const addNote = (note) => {
-//     setNotes((prevNotes) => [...prevNotes, note]);
+//     const newNote = { id: nanoid(), ...note };
+//     setNotes((prevNotes) => [...prevNotes, newNote]);
 //     setShowEditor(false);
-//     console.log("Note added:", note);
+//     console.log("Note added:", newNote);
 //   };
 
-//   //delete note funtion
+//   // Funcția de ștergere a notei
 //   const deleteNote = (id) => {
 //     const newNotes = notes.filter((note) => note.id !== id);
 //     setNotes(newNotes);
 //   };
 
-//   //send to list
+//   // Funcția de căutare a notei
 //   const handleSearchNote = (query) => {
 //     setSearchText(query);
 //     setSearchContent(query);
@@ -111,7 +116,7 @@
 //             initialNote={selectedNote}
 //             onCancel={() => {
 //               setIsEditing(false);
-//               setSelectedNote(null); // Resetăm nota selectată
+//               setSelectedNote(null);
 //             }}
 //           />
 //         )}
@@ -193,9 +198,9 @@ export default function NotesList() {
 
   // Funcția de modificare a notei
   const handleEditNote = (note) => {
-    setSelectedNote(note);
+    setSelectedNote({ ...note });
     setShowEditor(true);
-    setIsEditing(!!note);
+    setIsEditing(true);
   };
 
   // Efect pentru încărcarea datelor din localStorage
@@ -256,7 +261,7 @@ export default function NotesList() {
             initialNote={selectedNote}
             onCancel={() => {
               setIsEditing(false);
-              setSelectedNote(null); // Resetăm nota selectată
+              setSelectedNote(null);
             }}
           />
         )}
