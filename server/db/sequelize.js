@@ -12,9 +12,11 @@ const sequelize = new Sequelize(
 
  const models = [
     // Add here all of your models
+    require('../models/token'),
     require('../models/user'),
     require('../models/discipline'),    
-    require('../models/note'),  
+    require('../models/note'),
+    
    ].map(m=>m(sequelize));
 
 
