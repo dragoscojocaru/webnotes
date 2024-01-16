@@ -7,24 +7,21 @@ import Register from "../../authComponents/Register";
 import LinkPage from "../../authComponents/LinkPage";
 import Login from "../../authComponents/Login";
 
-
 import { Route, Routes } from "react-router-dom";
 
 export default function Router() {
-
   return (
     <div>
-      <Navbar />
       <div className="container">
         <Routes>
-        <Route path="/" element={<Layout/>}>
+          <Route path="/" element={<Layout />}>
             {/*rutele publice */}
-            <Route path="/" element={<Register/>}/>
-            <Route path="login" element={<Login/>}/>
-            <Route path="linkpage" element={<LinkPage/>}/>
+            <Route path="/" element={<Register />} />
+            <Route path="login" element={<Login />} />
+            <Route path="linkpage" element={<LinkPage />} />
             <Route path="/Home" element={<Home />} />
-          <Route path="/NotesList" element={<NotesList />} />
-        </Route>
+            <Route path="/NotesList" element={<NotesList />} />
+          </Route>
         </Routes>
       </div>
     </div>
